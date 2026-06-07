@@ -128,7 +128,7 @@ http://localhost:5173
   <img width="1866" height="900" alt="image" src="https://github.com/user-attachments/assets/73b3448a-0aa5-45c0-982c-34bf87b33e1a" />
 
 - Crowd Prediction and Smart Route Guidance
-  <img width="1840" height="375" alt="image" src="https://github.com/user-attachments/assets/3a642e3b-99d4-491f-8fd1-56c63cf777fb" />
+  <img width="1818" height="532" alt="image" src="https://github.com/user-attachments/assets/06f6b8a7-9b61-46ea-a51c-0ce4627a6fb9" />
 
 
 - Safety Alerts
