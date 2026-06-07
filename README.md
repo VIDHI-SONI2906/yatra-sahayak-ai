@@ -128,7 +128,8 @@ http://localhost:5173
   <img width="1866" height="900" alt="image" src="https://github.com/user-attachments/assets/73b3448a-0aa5-45c0-982c-34bf87b33e1a" />
 
 - Crowd Prediction and Smart Route Guidance
-  <img width="1832" height="811" alt="image" src="https://github.com/user-attachments/assets/d6033737-2d71-4743-88bf-e0d03c8186d0" />
+  <img width="1840" height="375" alt="image" src="https://github.com/user-attachments/assets/3a642e3b-99d4-491f-8fd1-56c63cf777fb" />
+
 
 - Safety Alerts
   <img width="1808" height="522" alt="image" src="https://github.com/user-attachments/assets/14491a25-5fe3-48cf-a249-bdae675324ac" />
