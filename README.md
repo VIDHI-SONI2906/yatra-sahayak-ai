@@ -1,162 +1,95 @@
-# 🚦 Simhastha CrowdFlow AI
+# 🧭 Yatra Sahayak
 
-AI-Powered Crowd Prediction & Route Optimization System for Ujjain Simhastha Mahakumbh
+AI-Assisted Crowd Prediction & Route Optimization for Ujjain Simhastha Mahakumbh
 
 ## 📌 Problem Statement
 
-The Simhastha Mahakumbh attracts millions of pilgrims, leading to congestion at ghats, temples, transport hubs, and major pathways. Managing crowd movement efficiently is critical for safety, emergency response, and pilgrim experience.
-
-Simhastha CrowdFlow AI provides a smart dashboard that helps monitor crowd density, predict congestion, optimize routes, and generate safety alerts.
-
----
+The Simhastha Mahakumbh draws millions of pilgrims, creating serious congestion risks at ghats, temples, and transit hubs. Yatra Sahayak is a decision-support dashboard that monitors crowd density, forecasts short-term congestion trends, and computes optimal routes between key locations — helping authorities and pilgrims alike make safer, faster decisions.
 
 ## 🎯 Features
 
 ### 📊 Pilgrim Density Monitor
-- Real-time crowd monitoring across major Simhastha locations.
-- Visual representation of crowd density levels.
+Live crowd density per location, pulled from a SQLite-backed history of readings, refreshed every 5 seconds.
 
 ### 📈 Crowd Prediction
-- Predicts future crowd congestion based on current crowd trends.
-- Helps authorities take preventive actions.
+Forecasts crowd levels 30 minutes ahead using a linear regression model (scikit-learn) fit on each location's recent trend. **Note:** historical data is synthetically generated (`seed.py`) with realistic time-of-day patterns (peaks around early morning and evening aarti timings) to simulate what a real sensor feed would produce — the prediction pipeline itself is genuine and would work identically on real data.
 
 ### 🧭 Smart Route Guidance
-- Suggests optimal routes between important locations.
-- Uses graph-based shortest path algorithms.
+Computes the shortest weighted path between any two locations using NetworkX (Dijkstra's algorithm) on a hand-defined graph of walking routes, then renders the actual road-following path on a live map via OSRM.
 
-### 🚨 Safety & Congestion Alerts
-- Generates alerts for highly congested areas.
-- Assists crowd management teams in decision making.
+### 🗺️ Live Map
+Interactive Leaflet map showing all locations color-coded by crowd density, with the selected route drawn as real road geometry (not a straight line).
 
-### 🗺️ Crowd Heatmap
-- Visual overview of crowd distribution across locations.
-
----
+### 🚨 Safety Alerts
+Surfaces a top-of-page alert banner when any location crosses a high-congestion threshold (>80%).
 
 ## 🏛️ Monitored Locations
 
-- Ram Ghat
-- Mahakaleshwar Temple
-- Har Siddhi Temple
-- Ujjain Railway Station
-- Nanakheda Bus Stand
-- Simhastha Sector A
-- Simhastha Sector B
-- Simhastha Sector C
-
----
+- Ram Ghat, Mahakaleshwar Temple, Har Siddhi Temple — real Ujjain landmarks
+- Ujjain Railway Station, Nanakheda Bus Stand — real transit hubs
+- Simhastha Sector A/B/C — illustrative zones used to simulate additional crowd-management points for the event
 
 ## 🛠️ Tech Stack
 
-### Frontend
-- React
-- Vite
-- JavaScript
-- CSS
-
-### Backend
-- FastAPI
-- Python
-
-### Algorithms & Libraries
-- NetworkX (Route Optimization)
-- REST APIs
-
----
+**Frontend:** React, Vite, Tailwind CSS, Leaflet / React-Leaflet
+**Backend:** FastAPI, Python
+**Data & ML:** SQLAlchemy + SQLite, scikit-learn (Linear Regression)
+**Routing:** NetworkX (shortest path), OSRM (road geometry)
 
 ## 🏗️ System Architecture
 
-```text
-Frontend (React + Vite)
+\`\`\`text
+Frontend (React + Vite + Tailwind)
           │
           ▼
       REST API
           │
           ▼
- Backend (FastAPI)
+   Backend (FastAPI)
           │
- ┌────────┼────────┐
- │        │        │
- ▼        ▼        ▼
-Crowd   Route   Alert
-Data    Engine  System
-```
+ ┌────────┼────────┬─────────┐
+ │        │        │         │
+ ▼        ▼        ▼         ▼
+Crowd   Predict   Route    Alert
+(SQLite) (sklearn) (NetworkX) System
+\`\`\`
 
 ## 🚀 Installation
 
 ### Backend
-
-```bash
+\`\`\`bash
 cd backend
-
 python -m venv venv
-
-venv\Scripts\activate
-
+venv\\Scripts\\activate
 pip install -r requirements.txt
-
+python seed.py        # generates synthetic historical data
 uvicorn main:app --reload
-```
-
-Backend runs at:
-
-```text
-http://127.0.0.1:8000
-```
+\`\`\`
+Runs at `http://127.0.0.1:8000`
 
 ### Frontend
-
-```bash
+\`\`\`bash
 cd frontend
-
 npm install
-
 npm run dev
-```
+\`\`\`
+Runs at `http://localhost:5173`
 
-Frontend runs at:
+## 🧪 Testing
 
-```text
-http://localhost:5173
-```
-
----
+Backend tests: `pytest backend/test/`
 
 ## 📷 Screenshots
 
-- Dashboard
-  <img width="1866" height="900" alt="image" src="https://github.com/user-attachments/assets/73b3448a-0aa5-45c0-982c-34bf87b33e1a" />
-
-- Crowd Prediction and Smart Route Guidance
-  <img width="1818" height="532" alt="image" src="https://github.com/user-attachments/assets/06f6b8a7-9b61-46ea-a51c-0ce4627a6fb9" />
-
-
-- Safety Alerts
-  <img width="1808" height="522" alt="image" src="https://github.com/user-attachments/assets/14491a25-5fe3-48cf-a249-bdae675324ac" />
-
-
----
+*(keep your existing screenshot embeds here — re-take them once the rename is done so they show "Yatra Sahayak" in the header)*
 
 ## 🔮 Future Scope
 
-- CCTV-based Crowd Analytics
-- Drone-assisted Monitoring
-- AI-powered Crowd Forecasting
-- Emergency Evacuation Planning
-- IoT Sensor Integration
-- Mobile App for Pilgrims
-- Real-Time GPS Navigation
-
----
-
-## 💡 Innovation
-
-This project combines crowd monitoring, predictive analytics, route optimization, and safety alert generation into a unified decision-support platform for managing large-scale religious gatherings such as Ujjain Simhastha Mahakumbh.
-
----
+- Real sensor/CCTV-based crowd data instead of simulated history
+- Self-hosted OSRM instance for production reliability
+- Mobile app for pilgrims with real-time GPS navigation
+- IoT integration for live density readings
 
 ## 👨‍💻 Developed For
 
-AI-Assisted Product Build Challenge
-
-Track: Intelligent Crowd Flow Prediction & Route Optimization
+AI-Assisted Product Build Challenge — Track: Intelligent Crowd Flow Prediction & Route Optimization
