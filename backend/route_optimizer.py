@@ -21,7 +21,6 @@ G.add_weighted_edges_from([
 ])
 
 def get_best_route(source, destination):
-
     path = nx.shortest_path(
         G,
         source=source,
@@ -29,7 +28,9 @@ def get_best_route(source, destination):
         weight="weight"
     )
 
+    total_weight = nx.path_weight(G, path, weight="weight")
+
     return {
         "path": path,
-        "estimated_time": len(path) * 3
+        "estimated_time": total_weight
     }
