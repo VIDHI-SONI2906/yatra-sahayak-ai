@@ -38,7 +38,7 @@ Surfaces a top-of-page alert banner when any location crosses a high-congestion 
 
 ## 🏗️ System Architecture
 
-\`\`\`text
+```text
 Frontend (React + Vite + Tailwind)
           │
           ▼
@@ -52,27 +52,27 @@ Frontend (React + Vite + Tailwind)
  ▼        ▼        ▼         ▼
 Crowd   Predict   Route    Alert
 (SQLite) (sklearn) (NetworkX) System
-\`\`\`
+```
 
 ## 🚀 Installation
 
 ### Backend
-\`\`\`bash
+```bash
 cd backend
 python -m venv venv
-venv\\Scripts\\activate
+venv\Scripts\activate
 pip install -r requirements.txt
 python seed.py        # generates synthetic historical data
 uvicorn main:app --reload
-\`\`\`
+```
 Runs at `http://127.0.0.1:8000`
 
 ### Frontend
-\`\`\`bash
+```bash
 cd frontend
 npm install
 npm run dev
-\`\`\`
+```
 Runs at `http://localhost:5173`
 
 ## 🧪 Testing
