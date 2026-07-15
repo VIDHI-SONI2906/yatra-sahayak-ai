@@ -16,7 +16,7 @@ Simhastha CrowdFlow AI provides a smart dashboard that helps monitor crowd densi
 - Real-time crowd monitoring across major Simhastha locations.
 - Visual representation of crowd density levels.
 
-### 📈 Crowd Forecast Engine
+### 📈 Crowd Prediction
 - Predicts future crowd congestion based on current crowd trends.
 - Helps authorities take preventive actions.
 
@@ -125,9 +125,15 @@ http://localhost:5173
 ## 📷 Screenshots
 
 - Dashboard
-- Crowd Forecast Engine
-- Smart Route Guidance
+  <img width="1866" height="900" alt="image" src="https://github.com/user-attachments/assets/73b3448a-0aa5-45c0-982c-34bf87b33e1a" />
+
+- Crowd Prediction and Smart Route Guidance
+  <img width="1818" height="532" alt="image" src="https://github.com/user-attachments/assets/06f6b8a7-9b61-46ea-a51c-0ce4627a6fb9" />
+
+
 - Safety Alerts
+  <img width="1808" height="522" alt="image" src="https://github.com/user-attachments/assets/14491a25-5fe3-48cf-a249-bdae675324ac" />
+
 
 ---
 
