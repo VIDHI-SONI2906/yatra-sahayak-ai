@@ -81,7 +81,12 @@ Backend tests: `pytest backend/test/`
 
 ## 📷 Screenshots
 
-*(keep your existing screenshot embeds here — re-take them once the rename is done so they show "Yatra Sahayak" in the header)*
+<img width="1912" height="908" alt="image" src="https://github.com/user-attachments/assets/f5cb251a-6c8d-4c85-9f39-780e331b5d48" />
+<img width="1847" height="875" alt="image" src="https://github.com/user-attachments/assets/9fc74d99-a4f8-4eb6-b0e6-97e5cca852a8" />
+<img width="1836" height="403" alt="image" src="https://github.com/user-attachments/assets/4450c804-e358-4add-a936-699bad4ffa5e" />
+
+
+
 
 ## 🔮 Future Scope
 
