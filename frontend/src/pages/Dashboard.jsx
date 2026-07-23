@@ -32,7 +32,7 @@ export default function Dashboard() {
 
       <div className="rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 p-6 md:p-8">
         <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-2">
-          🚦 Simhastha CrowdFlow AI
+          🧭 Yatra Sahayak
         </h1>
         <p className="mt-2 text-blue-100">
           Real-Time Crowd Prediction & Route Optimization for Ujjain Simhastha Mahakumbh
